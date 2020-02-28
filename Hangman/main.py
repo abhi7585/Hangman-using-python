@@ -29,7 +29,7 @@ def play(name):
     print("Welcome {} you have {} chances and your points are {}. ".format(name, chances, points))
 
     while loop:
-        
+        chances = 3
         word = get_word()
         print("Word is : {}".format(len(word)* '*'))
         newWord = len(word) * '*'
@@ -39,11 +39,11 @@ def play(name):
                 character = input("Enter a character: ")
                 temp = check_character(character, word, newWord)
                 newWord, flag = temp[0], temp[1]
-                if chances == 0:
+                if flag == False and chances == 1:
                     print("Guess was wrong. No remaining chances .")
                     print("Your score was: {}".format(points))
                     sys.exit(0)
-                elif flag == False and chances != 0:
+                elif flag == False and chances > 0:
                     chances = chances - 1
                     print("Guess was wrong. Chances remaining are {}".format(chances))
                 else:
@@ -53,9 +53,10 @@ def play(name):
                 points = points + 1
                 print("Your points: {}".format(points))
                 print("Your remaining chances: {} ".format(chances))
-                loop = input("Would you like to continue(True/False only):")
-                break
-
+                answer = input("Do you wish to continue ? (Y/N)").upper() 
+                if answer == "N":
+                    loop = False
+                break    
 
 print("Welcome to the Hangman Game!!!! ")
 time.sleep(1)
