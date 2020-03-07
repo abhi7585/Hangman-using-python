@@ -5,3 +5,6 @@ In this project, I have created Hangman game using a list which contains all the
 The user is given a word in * format of the length of the word. Then the user is asked to guess the character if the user guess is correct then the * is replaced with the character.
 Game is ended when the user's chances are 0 which is deducted when the user fails to guess the character. The game can also end when the user guessed the word correctly but is not willing to play further.
 In the end, point and name are shown.
+
+Update:
+Version 2 is here https://github.com/abhi7585/Hangman-Version-2
